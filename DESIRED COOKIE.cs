@@ -1,79 +1,160 @@
-﻿//MADLANGBAYAN, SHANE S.
-//BSCPE 1-1
-//WELCOME TO DESIRED COOKIE AND CAFE
-
-using System;
-namespace desiredCookieAndCafe 
+﻿using System;
+namespace desiredCookieAndCafe
 {
-    class Program 
-	{
-        static void Main()
+
+    class Program
+    {
+        static void Main(string[] args)
         {
-            int quantity = 1;
-            double total = 0;
-            Console.WriteLine("Welcome to Desired Cookie and Cafe");
-            Console.WriteLine("************** MENU **************");
-            Console.WriteLine("C1. Chocolate Crinkle and French Vanilla          Php 210");
-            Console.WriteLine("C2. White Raspberry Crinkle and Spanish Latte     Php 235");
-            Console.WriteLine("C3. Strawberry Cream and Iced Americano           Php 250");
-            Console.WriteLine("C4. Bavarian and Iced Latte                       Php 245");
-            Console.WriteLine("C5. Tiramisu and Caramel Macchito                 Php 240");
+            int quantity, userInput, total;
+            bool orderingSystem = true;
 
-            Console.WriteLine("Select your Order");
+            while (orderingSystem)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Welcome to Desired Cookie and Cafe");
+                Console.WriteLine("************** MENU **************");
+                Console.WriteLine("1. Chocolate Crinkle and French Vanilla          Php 210");
+                Console.WriteLine("2. White Raspberry Crinkle and Spanish Latte     Php 235");
+                Console.WriteLine("3. Strawberry Cream and Iced Americano           Php 250");
+                Console.WriteLine("4. Bavarian and Iced Latte                       Php 245");
+                Console.WriteLine("5. Tiramisu and Caramel Macchiato                Php 240");
+                Console.WriteLine();
+                Console.Write("Select your Order: ");
+                userInput = Convert.ToInt32(Console.ReadLine());
 
-            string userInput = Console.ReadLine();
+                if (userInput == 1)
+                {
 
-            if (userInput == "C1") {
-                Console.WriteLine("Chocolate Crinkle and French Vanilla                 Php 210");
+                    var oneInput = new List<string>()
+                    { "************************************",
+                        "Chocolate Crinkle and French Vanilla",
+                        "***********************************"};
+                    foreach (string i in oneInput)
+                    {
+                        Console.WriteLine(i);
+                    }
+                    chocoCrinklesBill();
+                }
+                else if (userInput == 2)
+                {
+                    var oneInput = new List<string>()
+                    { "************************************",
+                        "White Raspberry Crinkle and Spanish Latte",
+                        "***********************************"};
+                    foreach (string i in oneInput)
+                    {
+                        Console.WriteLine(i);
+                    }
+                    raspberryLatteBill();
 
-                Console.WriteLine("How many orders would you like? ");
-                quantity = Convert.ToInt32(Console.ReadLine());
-                total = quantity * 210;
-                Console.WriteLine("Your total amount is Php " + total);
 
-                Console.WriteLine("THANK YOU FOR ORDERING, PLEASE COME AGAIN! ");
+                }
+
+                else if (userInput == 3)
+                {
+                    var oneInput = new List<string>()
+                    { "************************************",
+                        "Strawberry Cream Crinkle and Iced Americano",
+                        "***********************************"};
+                    foreach (string i in oneInput)
+                    {
+                        Console.WriteLine(i);
+                    }
+                    strawberryCreamIcedAmericanoBill();
+                }
+                else if (userInput == 4)
+                {
+                    var oneInput = new List<string>()
+                    { "************************************",
+                        "Bavarian Crinkle and Iced Latte",
+                        "***********************************"};
+                    foreach (string i in oneInput)
+                    {
+                        Console.WriteLine(i);
+                    }
+                    barvarianIcedteabBill();
+                }
+                else if (userInput == 5)
+                {
+                    var oneInput = new List<string>()
+                    { "************************************",
+                        "Tiramisu and Caramel Macchiato",
+                        "***********************************"};
+                    foreach (string i in oneInput)
+                    {
+                        Console.WriteLine(i);
+                    }
+                    tiramisuMacchiatoBill();
+
+                }
+
+
+
             }
-            if (userInput == "C2") {
-                Console.WriteLine("White Raspberry Crinkle and Spanish Latte            Php 235");
 
-                Console.WriteLine("How many orders would you like? ");
-                quantity = Convert.ToInt32(Console.ReadLine());
-                total = quantity * 235;
-                Console.WriteLine("Your total amount is Php " + total);
 
-                Console.WriteLine("THANK YOU FOR ORDERING, PLEASE COME AGAIN! ");
-            } 
-            if (userInput == "C3") {
-                Console.WriteLine("Strawberry Cream Crinkle and Iced Americano          Php 250");
-
-                Console.WriteLine("How many orders would you like? ");
-                quantity = Convert.ToInt32(Console.ReadLine());
-                total = quantity * 250;
-                Console.WriteLine("Your total amount is " + total);
-
-                Console.WriteLine("THANK YOU FOR ORDERING, PLEASE COME AGAIN! ");
-            } 
-            if (userInput == "C4") {
-                Console.WriteLine("Bavarian Crinkle and Iced Latte                      Php 245");
-
-                Console.WriteLine("How many orders would you like? ");
-                quantity = Convert.ToInt32(Console.ReadLine());
-                total = quantity * 245;
-                Console.WriteLine("Your total amount is " + total);
-
-                Console.WriteLine("THANK YOU FOR ORDERING, PLEASE COME AGAIN! ");
-            }
-            if (userInput == "C5") {
-                Console.WriteLine("Tiramisu and Caramel Macchiato                       Php 240");
-
-                Console.WriteLine("How many orders would you like? ");
-                quantity = Convert.ToInt32(Console.ReadLine());
-                total = quantity * 245;
-                Console.WriteLine("Your total amount is " + total);
-
-                Console.WriteLine("THANK YOU FOR ORDERING, PLEASE COME AGAIN! "); 
-            }    
         }
-    }
+        static void chocoCrinklesBill()
+        {
 
+            Console.Write("Type the quantity of your order: ");
+            int quantity = Convert.ToInt32(Console.ReadLine());
+            int total = quantity * 210;
+            Console.WriteLine();
+            Console.WriteLine("Your total amount is Php " + total + ".00");
+            Console.WriteLine();
+
+        }
+        static void raspberryLatteBill()
+        {
+
+            Console.Write("Type the quantity of your order: ");
+            int quantity = Convert.ToInt32(Console.ReadLine());
+            int total = quantity * 235;
+            Console.WriteLine();
+            Console.WriteLine("Your total amount is Php " + total + ".00");
+            Console.WriteLine();
+
+        }
+        static void strawberryCreamIcedAmericanoBill()
+        {
+
+            Console.Write("Type the quantity of your order: ");
+            int quantity = Convert.ToInt32(Console.ReadLine());
+            int total = quantity * 250;
+            Console.WriteLine();
+            Console.WriteLine("Your total amount is Php " + total + ".00");
+            Console.WriteLine();
+
+        }
+        static void barvarianIcedteabBill()
+        {
+
+            Console.Write("Type the quantity of your order: ");
+            int quantity = Convert.ToInt32(Console.ReadLine());
+            int total = quantity * 245;
+            Console.WriteLine();
+            Console.WriteLine("Your total amount is Php " + total + ".00");
+            Console.WriteLine();
+
+        }
+
+        static void tiramisuMacchiatoBill()
+        {
+
+            Console.Write("Type the quantity of your order: ");
+            int quantity = Convert.ToInt32(Console.ReadLine());
+            int total = quantity * 240;
+            Console.WriteLine();
+            Console.WriteLine("Your total amount is Php " + total + ".00");
+            Console.WriteLine();
+
+        }
+
+
+
+    }
 }
+
+
